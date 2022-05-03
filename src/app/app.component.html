@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <!-- Navbar -->
+ <app-navbar></app-navbar>
+  <!-- /.navbar -->
+
+  <!-- /.control-sidebar -->
+  <div class="content-wrapper" style="min-height: 1302.4px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Simple Tables</h1>
+          </div>
+        
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <app-sidebar></app-sidebar>
+    <router-outlet></router-outlet>
+    <!-- Content Wrapper. Contains page content -->
+    <ul class="navbar-nav">  
+      <li class="nav-item ">  
+        <a routerLink="view-Fournisseur" class="nav-link" class="btn btn-primary active" role="button" >View Fournisseurs</a>  
+      </li>   
+      <li class="nav-item">  
+        <a  routerLink="add-Fournisseur" class="nav-link" class="btn btn-primary active" role="button" >Add Fournisseur</a>  
+      </li>  
+      <li class="nav-item">  
+        <a  routerLink="add-client" class="nav-link" class="btn btn-primary active" role="button" >Add client</a>  
+      </li> 
+      <li class="nav-item ">  
+        <a routerLink="view-Client" class="nav-link" class="btn btn-primary active" role="button" >View Clients</a>  
+      </li>
+      <li class="nav-item ">  
+        <a routerLink="Rayon" class="nav-link" class="btn btn-primary active" role="button" >View Rayons</a>  
+      </li> 
+      <li class="nav-item ">  
+        <a routerLink="Produit" class="nav-link" class="btn btn-primary active" role="button" >View Produit</a>  
+      </li> 
+      <li class="nav-item ">  
+        <a routerLink="login" class="nav-link" class="btn btn-primary active" role="button" (click)="logout()" >logout</a>  
+      </li>  
+     
+                   
+    </ul>  
+  <!-- Main Footer -->
+
+</div>
+<!-- ./wrapper -->

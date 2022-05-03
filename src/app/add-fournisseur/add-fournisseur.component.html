@@ -1,0 +1,45 @@
+<h3>Create Fournisseur</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="Fournisseursaveform" #saveFournissseur (ngSubmit)="saveFournisseur(saveFournisseur)">  
+          <div class="form-group">  
+              <label for="name">Fournisseur libelle</label>  
+              <input type="text" class="form-control"  formControlName="libelle_Fournisseur" data-toggle="tooltip"   
+                 data-placement="right" title="Enter libelle Fournisseur" >  
+              <div class="alert alert-danger" *ngIf = "(Fournisseurlibelle.touched) && (Fournisseurlibelle.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="libelle_Fournisseur.errors.minlength">Fournisseur libelle is Required</span>  
+                    <span *ngIf = "libelle_Fournisseur.errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+                </div>  
+          </div>  
+     
+          <div class="form-group">  
+              <label for="name">code Fournisseur</label>  
+              <input type="text" class="form-control" formControlName="code_Fournisseur"   
+                data-toggle="tooltip" data-placement="right" title="Enter code Fournisseur">  
+                <div class="alert alert-danger" *ngIf = "(Fournisseurlibelle.touched) && (Fournisseurcode.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="code_Fournisseur.errors.required">code Fournisseur is Required</span>  
+                    <span *ngIf = "code_Fournisseur.errors.email">   
+                        Invalid code Fournisseur   
+                    </span>                     
+                </div>  
+          </div>  
+    
+          
+    
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  
+  <div class="col-sm-4"></div>  
+</div>  

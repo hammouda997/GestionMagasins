@@ -1,0 +1,22 @@
+
+    <h3 style="text-align: center;">Modifier un Stock </h3>
+    <form [formGroup]="myForm" (submit)="edit()" >
+        <div class="form-group">
+            <label>IdStock</label>
+            <input type="text" class="form-control" formControlName="idStock">
+        </div> 
+        <div class="form-group">
+            <label>Quantite stock</label>
+            <input type="text" class="form-control" formControlName="qteStock">
+        </div> 
+        <div class="form-group">
+            <label>Quantite Minimum</label>
+            <input type="text" class="form-control" formControlName="qteMin">
+        </div> 
+        <div class="form-group">
+            <label>libelle Stock</label>
+            <input type="text" class="form-control" formControlName="libelleStock">
+        </div> 
+        <br>
+        <input type="submit" class="btn btn-outline-success" style="margin-left: 40%; margin-bottom: 20px;" value="Modifier">
+    </form>

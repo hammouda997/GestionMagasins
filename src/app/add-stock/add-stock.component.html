@@ -1,0 +1,44 @@
+<h3>Create Stock</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="Stocksaveform" #save (ngSubmit)="saveStock(saveStock)">   
+          <div class="form-group">  
+              <label for="name">Quantité Stock</label>  
+              <input type="text" class="form-control"  formControlName="qteStock" data-toggle="tooltip"   
+                 data-placement="right" title="Enter Quantité Stock" >  
+                 <div class="alert alert-danger" *ngIf="GetQuantite.errors">
+                  <div *ngIf="GetQuantite.errors.required">champ obligatoire</div>
+                  <div *ngIf="GetQuantite.errors.pattern">pattern non respecte</div>
+                        </div>
+          </div>  
+          <div class="form-group">  
+              <label for="name">Quantité Min</label>  
+              <input type="text" class="form-control" formControlName="qtemin"   
+                data-toggle="tooltip" data-placement="right" title="Enter Quantité Min">  
+                <div class="alert alert-danger" *ngIf="QteMin.errors">
+                  <div *ngIf="QteMin.errors.required">champ obligatoire</div>
+                  <div *ngIf="QteMin.errors.pattern">pattern non respecte</div>
+                        </div> 
+          </div>  
+          <div class="form-group">  
+            <label for="name">libelle Stock</label>  
+            <input type="text" class="form-control" formControlName="libelleStock"   
+              data-toggle="tooltip" data-placement="right" title="Enter code rayon">  
+              <div class="alert alert-danger" *ngIf="GetLibelle.errors">
+                <div *ngIf="GetLibelle.errors.required">champ obligatoire</div>
+                <div *ngIf="GetLibelle.errors.pattern">pattern non respecte</div>
+                      </div> 
+        </div>  
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  
+  <div class="col-sm-4"></div>  
+</div>  

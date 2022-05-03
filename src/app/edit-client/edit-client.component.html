@@ -1,0 +1,38 @@
+  
+<h3 style="text-align: center;">Modifier un client </h3>
+<form [formGroup]="myForm" (submit)="edit()" >
+    <div class="form-group">
+        <label>idClient</label>
+        <input type="text" class="form-control" formControlName="idClient">
+    </div> 
+    <div class="form-group">
+        <label>nom</label>
+        <input type="text" class="form-control" formControlName="nom">
+    </div> 
+    <div class="form-group">
+        <label>prenom</label>
+        <input type="text" class="form-control" formControlName="prenom">
+    </div>
+    <div class="form-group">
+        <label>email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label>password</label>
+        <input type="text" class="form-control" formControlName="password">
+    </div>
+    <div class="form-group">
+        <label>dateNaissance</label>
+        <input type="text" class="form-control" formControlName="dateNaissance">
+    </div>
+    <div class="form-group">
+        <label>profession</label>
+        <input type="text" class="form-control" formControlName="profession">
+    </div>
+    <div class="form-group">
+        <label>catClient</label>
+        <input type="text" class="form-control" formControlName="catClient">
+    </div> 
+    <br>
+    <input type="submit" class="btn btn-primary" style="margin-left: 40%; margin-bottom: 20px;" value="Modifier">
+</form>

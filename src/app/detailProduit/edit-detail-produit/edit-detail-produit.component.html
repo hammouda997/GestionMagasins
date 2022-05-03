@@ -1,0 +1,32 @@
+<form ngForm #f=ngForm  (submit)="save3()"> 
+  <div class="card-header">
+    <br>
+<h1 class="card-title"  [ngStyle]="{'font-style': getStyle()}">Moidifier Detail Produit   <!-- avec id {{DetailProduit.idDetailProduit}}--> </h1>   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"> 
+    <span aria-hidden="true">&times;</span>
+ 
+  </button>       
+</div> 
+   <div class="mb-3">  
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label" >Date Dernier Modification</label> 
+         <input name="dateDernierModification" [(ngModel)]="DetailProduit.dateDernierModification" #dateDernierModification="ngModel" type="date" class="form-control">
+         </div>
+       
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Date Creation</label>
+        <input name="datecreation" [(ngModel)]="DetailProduit.datecreation" #datecreation="ngModel" type="date" class="form-control">
+      </div>    
+    </div>
+      <div class="form-group">
+          <label class="form-control-label" for="exampleFormControlInput1">categorie Produit </label>
+          <select class="form-control" for="exampleFormControlInput1" [(ngModel)]="DetailProduit.categorieProduit" #categorieProduit= "ngModel" name="categorieProduit" >
+          <option *ngFor="let i of categorieProduits" [ngValue]="i">{{categorieProduit2[i]}}</option>
+        </select>
+      </div>   
+      <div class="modal-footer">
+          <button type="submit" class="btn btn-success " (click)="activeModal.close('Close click') " >Submit</button> 
+          <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+        </div>
+</form>  
+ 

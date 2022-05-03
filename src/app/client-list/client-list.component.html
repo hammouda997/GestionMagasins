@@ -1,0 +1,58 @@
+<div class="panel panel-default">  
+    <div class="panel-heading">  
+        <h1 style="text-align: center">Client</h1><br>  
+        <div class="row" [hidden]="!deleteMessage">  
+               
+                  <div class="col-sm-4"></div>  
+                  <div class="col-sm-4">  
+                          <div class="alert alert-info alert-dismissible">  
+                                  <button type="button" class="close" data-dismiss="alert">×</button>  
+                                  <strong>Client Data Deleted</strong>  
+                          </div>  
+                  </div>  
+                  <div class="col-sm-4"></div>  
+          </div>             
+      </div>  
+    
+      
+    <div class="panel-body">  
+        <table  class="table table-hover table-sm" >  
+            <thead class="thead-light">  
+                <tr>  
+                    <th>Client id</th>  
+                    <th>Client nom</th>  
+                    <th>Client prenom</th>  
+                    <th>Client email</th> 
+                    <th>Client dateNaissance</th> 
+                    <th>Client password</th> 
+                    <th>Client catClient</th> 
+                    <th>Client profession</th>  
+                    <th>Action</th>  
+                      
+                </tr>  
+            </thead>  
+            <tbody>  
+                 <tr *ngFor="let f of Clients ">  
+                    <td>{{f.idClient}}</td>  
+                    <td>{{f.nom}}</td>  
+                    <td>{{f.prenom}}</td>  
+                    <td>{{f.email}}</td>  
+                    <td>{{f.dateNaissance}}</td> 
+                    <td>{{f.password}}</td> 
+                     
+                    <td>{{f.catClient}}</td>  
+                    <td>{{f.profession}}</td>  
+
+                    <td>{{f.codeFornisseur}}</td>  
+                    <td><button (click)="deleteF(f.idClient)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>   
+                     <button class="btn btn-warning" (click)="showEdit(f)">modifier</button>
+                    </td>  
+                  </tr>   
+            </tbody><br>  
+        </table>  
+    </div>  
+    <app-edit-client (edited)="updateClient($event)"[prop2]="myRay" [ClientToEdit]="myRay" *ngIf="show"></app-edit-client>
+  </div>   
+    
+  
+  

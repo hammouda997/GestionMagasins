@@ -1,0 +1,68 @@
+<!-- Content Wrapper. Contains page content -->
+<div>
+    <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <button  [routerLink]="['/AddStock']" class="btn btn-outline-primary">Ajouter</button>
+                  <span  class="material-icons" (click)="download()" tabindex="-1" role="button" aria-disabled="true">
+                    <button class="btn btn-outline-info"> PDF</button>
+                    </span>
+
+                   </div>
+                <!-- /.card-header -->
+                <input type="text" class="form-control" placeholder=" Rechercher..." name="libelleStock" [(ngModel)] = "libelleStock" (ngModelChange)="Search()" >
+                <div class="card-body">
+                  <table class="table table-bordered" id="table">
+                 
+                    <thead>
+                      <tr>
+                        <th (click)="sort('qte')">Quantité Stock&nbsp;
+                          <i class="fa fa-sort"></i></th>
+                        <th>Quantité Min</th>
+                        <th>libelle Stock</th>
+                        <th>Supprimer</th>
+                        <th>Modifier</th>
+                     
+                      </tr>
+                    </thead>
+                    <tbody> 
+                      <!-- | orderBy: key:reverse -->
+                      <tr  *ngFor="let u of stocks " >
+                        <td>{{u.qteStock}}</td>
+                        <td>{{u.qteMin}}</td>
+                        <td>{{u.libelleStock}}</td>
+
+                        <td><button class ="btn btn-outline-danger" (click)="deleteStock(u.idStock,i)" >supprimer</button></td>
+                        <td><button class="btn btn-outline-warning" (click)="showEdit(u)">Modifier</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+               
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+                      <li class="page-item"><a class="page-link" href="#">«</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">»</a></li>
+                    </ul>
+                  </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.row -->
+        <!-- /.container-fluid -->
+        <app-edit-stock (edited)="updatestock($event)" [prop2]="myRay" [stockToEdit]="myRay" *ngIf="show" ></app-edit-stock>
+      </section>
+      <!-- Main Footer -->
+   
+    </div>
+    
+    <mat-spinner *ngIf="displaySpinner"></mat-spinner>

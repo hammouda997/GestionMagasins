@@ -1,0 +1,50 @@
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+                <br>
+            <h1 class="card-title" [ngStyle]="{'font-style': getStyle()}">Detail Produit   <!-- avec id {{DetailProduit.idDetailProduit}}--> </h1>   <button type="button" class="close" aria-label="Close" (click)="activeModal1.dismiss('Cross click')"> 
+                <span aria-hidden="true">&times;</span>
+             
+              </button>       
+            </div>
+            
+            <!-- /.card-header -->
+            <div class="card-body" >
+              <table  lass="col-md-12" class="table table-bordered">
+                <thead align="center" >
+                  <tr>
+                    
+                    <th>Date Dernier Modification</th>
+                    <th>Datecreation</th>
+                    <th>CategorieProduit</th>
+                  </tr>
+                </thead>
+                <tbody align="center">
+                 <tr>
+                     <td>{{DetailProduit.dateDernierModification}}</td>
+                     <td>{{DetailProduit.datecreation}}</td>
+                     <td>{{DetailProduit.categorieProduit}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="modal-footer">
+               <button type="button" class="btn  btn-outline-success" (click)="open(DetailProduit.idDetailProduit)" (click)="activeModal1.close('Close click') "  >Modifier</button>                 
+                <button type="button" class="btn btn-outline-dark" (click)="activeModal1.close('Close click')">Close</button>
+              </div>
+            </div>
+     
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+      <!-- /.row -->
+    <!-- /.container-fluid -->
+    </section>
+  
+  

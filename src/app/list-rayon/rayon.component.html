@@ -1,0 +1,65 @@
+<!-- Content Wrapper. Contains page content -->
+<div>
+    <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+               <button  [routerLink]="['/AddRayon']" class="btn btn-outline-primary">Ajouter</button>
+               <div class="input-group input-group-sm" style="width: 150px;">
+              
+                <button class="btn btn-sm btn-dark" (click)='triASC()'>Trie Up</button>
+                <button class="btn btn-sm btn-dark" (click)='triDESC()'>Trie Down</button>
+                </div>
+               
+                </div>
+                <!-- /.card-header -->
+                <input type="text" class="form-control" placeholder=" Rechercher..." name="libelleRayon" [(ngModel)] ="libelleRayon" (ngModelChange)="Search()" >
+                <div class="card-body">
+                  <table class="table table-bordered" id="table">
+                 
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>code</th>
+                        <th>libelle</th>
+                        <th>Supprimer</th>
+                        <th>Modifier</th>
+                    
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor="let u of rayons ; let i=index " >
+                        <td>{{u.idRayon}}</td>
+                        <td>{{u.codeRayon}}</td>
+                        <td>{{u.libelleRayon}}</td>
+                        <td><button class ="btn btn-outline-danger" (click)="deleteRayon(u.idRayon,i)" >supprimer</button></td>
+                        <td><button class="btn btn-outline-warning" (click)="showEdit(u)">Modifier</button></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+               
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+                      <li class="page-item"><a class="page-link" href="#">«</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">»</a></li>
+                    </ul>
+                  </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.row -->
+        <!-- /.container-fluid -->
+        <app-edit-rayon (edited)="updaterayon($event)" [prop2]="myRay" [rayonToEdit]="myRay" *ngIf="show" ></app-edit-rayon>
+      </section>
+      <!-- Main Footer -->
+    
+    </div>

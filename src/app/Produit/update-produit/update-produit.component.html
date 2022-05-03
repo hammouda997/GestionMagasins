@@ -1,0 +1,71 @@
+<div class="card">
+    <!-- Card header -->
+    <div class="card-header">
+        <h3 class="mb-0">Modifier Produit</h3>
+    </div>
+    <div class="row">  
+    <div class="col-sm-4"></div>  
+    <div class="col-sm-4" >
+    <!-- Card body -->
+    <div class="card-body">
+<form #f="ngForm" (submit)="save2()">
+    <div class="mb-3">
+        <label class="form-label"></label>
+        </div>
+    <div class="mb-3">
+        <label class="form-label">codeProduit</label>
+        <input name="code" required [(ngModel)]="product.codeProduit" #codeProduit="ngModel" type="text" class="form-control">
+        <div
+                  *ngIf="codeProduit.invalid && (codeProduit.dirty || codeProduit.touched)"
+    class="alert">
+    <div> Ce champ est obligatoire est de 4 charachteres mimum.</div>
+                    </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Libelle</label>
+        <input name="libelle"required [(ngModel)]="product.libelleProduit" #libelleProduit="ngModel" type="text" class="form-control">
+    </div>
+    <div
+    *ngIf="libelleProduit.invalid && (libelleProduit.dirty || libelleProduit.touched)"
+class="alert">
+<div> Ce champ est obligatoire est de 4 charachteres mimum.</div>
+      </div>
+    <div class="mb-3">
+        <label class="form-label">Prix unitaire</label>
+        <input name="prixUnitaire" required [(ngModel)]="product.prixUnitaire" #prixUnitaire="ngModel" type="text" class="form-control">
+    </div>
+    <div
+    *ngIf="prixUnitaire.invalid && (prixUnitaire.dirty || prixUnitaire.touched)"
+class="alert">
+<div> Ce champ est obligatoire est de 4 charachteres mimum.</div>
+      </div>
+    <div class="mb-3">
+        <label  class="form-label">Rayon </label>
+        <select  name="rayon.idRayon" required class="form-control" [(ngModel)]="product.rayon" #idRayon="ngModel">
+            <option *ngFor="let r of listRayon" [ngValue]="r">{{r.libelleRayon}}</option>
+        </select>
+    </div>
+    <div
+    *ngIf="idRayon.invalid && (idRayon.dirty || idRayon.touched)"
+class="alert">
+<div> Ce champ est obligatoire est de 4 charachteres mimum.</div>
+      </div>
+    
+    <div class="mb-3">
+        <label> Stock</label>
+        <select  name="libelleStock" required class="form-control" [(ngModel)]="product.stock" #idStock="ngModel" >
+        <option *ngFor="let s of listStock" [ngValue]="s">{{s.libelleStock}}</option>
+        </select>
+        <div
+        *ngIf="idStock.invalid && (idStock.dirty || idStock.touched)"
+class="alert">
+<div> Ce champ est obligatoire est de 4 charachteres mimum.</div>
+          </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>

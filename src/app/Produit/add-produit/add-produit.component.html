@@ -1,0 +1,104 @@
+<div class="card">
+  <!-- Card header -->
+  <div class="card-header">
+      <h3 class="mb-0">Add Product</h3>
+  </div>
+  <div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >
+  <!-- Card body -->
+  <div class="card-body">
+      <form   #f="ngForm" (submit)="saveProduit()">
+          <div class="form-group">
+              <label >Code Produit</label>
+              <input name="codeProduit" required minlength="4" [(ngModel)]="product.codeProduit" #codeProduit="ngModel" type="text" class="form-control"
+            placeholder="Code Produit">
+                  <div
+                  *ngIf="codeProduit.invalid && (codeProduit.dirty || codeProduit.touched)"
+    class="alert">
+    <div> Ce champ est obligatoire est de 4 charachteres mimum.</div>
+                    </div>
+          </div>
+          <div class="form-group">
+              <label >Libelle Produit</label>
+              <input name="libelle"  required minlength="4" [(ngModel)]="product.libelleProduit" #libelleProduit="ngModel" type="text"
+                  class="form-control"  placeholder="Libelle Produit">
+                  <div
+                  *ngIf="libelleProduit.invalid && (libelleProduit.dirty || libelleProduit.touched)"
+    class="alert">
+    <div> Ce champ est obligatoire est de 4 charachteres mimum.</div>
+                    </div>
+          </div>
+     
+   
+          <div class="form-group">
+              <label  >Prix Unitaire Produit</label>
+              <input name="prixUnitaire"  required  [(ngModel)]="product.prixUnitaire" #prixUnitaire="ngModel" type="text"
+                  class="form-control"  placeholder="Prix Unitaire Produit">
+                  <div
+                  *ngIf="prixUnitaire.invalid && (prixUnitaire.dirty || prixUnitaire.touched)"
+    class="alert">
+    <div> Ce champ est obligatoire est de 4 charachteres mimum.</div>
+                    </div>
+          </div>
+            <div class="form-group">
+              <label  >Stock</label>
+                <select class="form-control" required  [(ngModel)]="product.stock"  #libelleStock ="ngModel" name="libelleStock" >
+                  <option *ngFor="let i of listStock" [ngValue]="i">{{i.libelleStock}}</option>
+                </select>
+                <div
+              *ngIf="libelleStock.invalid && (libelleStock.dirty || libelleStock.touched)"
+class="alert">
+<div>select ID Stockn.</div>
+                </div>
+              </div>
+        
+           <div class="form-group">
+            <label >Rayon</label>
+          <select class="form-control"  [(ngModel)]="product.rayon" #libelleRayon="ngModel" name="libelleRayon" required >
+            <option *ngFor="let i of listRayons" [ngValue]="i">{{i.libelleRayon}}</option>
+          </select>
+          <div
+          *ngIf="libelleRayon.invalid && (libelleRayon.dirty || libelleRayon.touched)"
+class="alert">
+<div>select ID Rayon.</div>
+            </div>
+        </div>     
+        <div class="form-group">
+          <label >Date Dernier Modification</label>
+          <input name="dateDernierModification" required [(ngModel)]="product.detailproduit.dateDernierModification" #dateDernierModification="ngModel" type="date"
+              class="form-control"  >
+              <div
+              *ngIf="dateDernierModification.invalid && (dateDernierModification.dirty || dateDernierModification.touched)"
+class="alert">
+<div>select date.</div>
+                </div>
+      </div>    
+      <div class="form-group">
+        <label >Date creation</label>
+        <input name="datecreation" required [(ngModel)]="product.detailproduit.datecreation" #datecreation="ngModel" type="date"
+            class="form-control"  >
+            <div
+            *ngIf="datecreation.invalid && (datecreation.dirty || datecreation.touched)"
+class="alert">
+<div>select date.</div>
+              </div>
+    </div>    
+    <div class="form-group">
+      <label >Categorie Produit </label>
+    <select class="form-control" required [(ngModel)]="product.detailproduit.categorieProduit" #categorieProduit="ngModel" name="categorieProduit" >
+      <option *ngFor="let i of categorieProduits" [ngValue]="i">{{categorieProduit2[i]}}</option>
+    </select>
+    <div
+    *ngIf="categorieProduit.invalid && (categorieProduit.dirty || categorieProduit.touched)"
+class="alert">
+<div>select categorie.</div>
+      </div>
+  </div>
+          
+     <button type="submit" class="btn btn-primary"[disabled]="f.invalid">Submit</button>  
+      </form>
+      </div>
+  </div>
+  </div>
+</div>
