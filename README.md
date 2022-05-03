@@ -6,4 +6,8 @@ A sample project built using a Spring MVC / AngularJs stack. The frontend is bas
 
 #### 
 
-The Project contains a simple store management , where user can mange his stock , products , invoice ect ...
+The Project contains a simple store manager, where user can manage  his stock , products , invoice ect ...
+
+####
+
+The project contains two branches , feel free to enjoy the code and welcome for all your feedback , i will be always happy to improve my code 
